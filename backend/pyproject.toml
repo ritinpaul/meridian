@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "meridian-backend"
+version = "0.1.0"
+description = "Meridian real-time geospatial backend"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "aiosqlite>=0.21.0",
+  "asyncpg>=0.30.0",
+  "fastapi>=0.116.0",
+  "pydantic-settings>=2.8.0",
+  "redis>=5.2.0",
+  "sqlalchemy>=2.0.39",
+  "uvicorn[standard]>=0.34.0",
+  "websockets>=13.1"
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28.0",
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.26.0",
+  "ruff>=0.11.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
