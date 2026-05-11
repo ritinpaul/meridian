@@ -1,4 +1,4 @@
-# Meridian
+# Meridian / FieldWatch
 
 Meridian is a real-time geospatial operations command center built to demonstrate
 production-style streaming architecture, low-latency event processing, and
